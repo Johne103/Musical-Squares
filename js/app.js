@@ -1,4 +1,5 @@
 $(function() {
+  console.log('js loaded');
   $('div').one('click', function() {
 //document.addEventListener('DOMContentLoaded', function () {
 
