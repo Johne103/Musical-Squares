@@ -1,12 +1,17 @@
 body {
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
   background-color: #fff;
   font-family: 'Exo 2', sans-serif;
 }
 
+h1, h2 {
+  text-align: center;
+}
+
 #cpuSquares {
   width: 225px;
+  margin: auto;
 }
 
 .cpu-square {
@@ -20,20 +25,65 @@ body {
 
 #userSquares {
   width: 225px;
+  margin: auto;
+
 }
 
 .user-square {
   display: inline-block;
+  height: 108px;
+  width: 108px;
+  background-color: grey;
+  padding: 2px;
+  vertical-align: top;
 }
 
-.user-square-image {
-  width: 55px;
-  height: 55px;
+.user-square-audio {
+  width: 111px;
+  height: 111px;
 }
 
 
 ol {
   list-style: none;
-  display: block-inline;
+  margin: auto;
+  margin-top: 10px;
+  padding: 0px;
+  text-align: center;
+}
 
+#play {
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+#level1 {
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+#level2 {
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+#level3 {
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+#reset {
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+#quit {
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
 }
