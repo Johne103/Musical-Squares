@@ -19,8 +19,8 @@ h1, h2 {
 }
 
 .cpu-square-image {
-  width: 111px;
-  height: 111px;
+  width: 60px;
+  height: 60px;
 }
 
 #userSquares {
@@ -31,8 +31,8 @@ h1, h2 {
 
 .user-square {
   display: inline-block;
-  height: 108px;
-  width: 108px;
+  height: 60px;
+  width: 60px;
   background-color: grey;
   padding: 2px;
   vertical-align: top;

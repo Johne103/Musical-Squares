@@ -239,7 +239,7 @@ $(function() {
 
 
   function initialiseCpuSquares() {
-    var noOfCpuSquares = (cpuSquares.length - 12);
+    var noOfCpuSquares = (cpuSquares.length - 7);
     var cpuSquaresContainerObj = document.getElementById('cpuSquares');
     var cpuSquareObj;
     var imageObj;
@@ -264,7 +264,7 @@ $(function() {
   }
 
   function initialiseUserSquares() {
-    var noOfUserSquares = (userSquares.length - 12);
+    var noOfUserSquares = (userSquares.length - 7);
     var userSquaresContainerObj = document.getElementById('userSquares');
     var playSound = document.getElementById("soundToPlay");
     var userSquareObj;
