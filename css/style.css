@@ -1,7 +1,7 @@
 body {
   max-width: 600px;
   margin: 0 auto;
-  background-image: url('/images/musical_notes.jpg');
+  /*background-image: url("images/musical_notes.jpg');*/
 }
 
 h1, h2 {
@@ -27,6 +27,7 @@ h1, h2 {
 .cpu-square-image {
   width: 60px;
   height: 60px;
+  margin: 1px;
 }
 
 #userSquares {

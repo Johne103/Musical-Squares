@@ -1,5 +1,5 @@
 $(function() {
-  console.log('js loaded');
+  //$('div').one('click', function() {
   //$('div').one('click', function() {
   //document.addEventListener('DOMContentLoaded', function () {
 
@@ -227,6 +227,16 @@ $(function() {
     }
   });
 
+  $(function(){
+    $('div').on("click", function() {
+      var $element = $(this);
+      $element.hide("slow", "swing", function(){
+        setTimeout(function(){
+          $element.show();
+        }, 1000);
+      });
+    });
+  });
 
   function playGame () {
     var playStart = this.id;
@@ -239,8 +249,8 @@ $(function() {
 
   function resetGame () {
     clickCounter = 0;
-    for(var i=0;i<squares.length; i++) {
-      squares[i].textContent = "";
+    for(var i=0;i<userSquares.length; i++) {
+      userSquares[i].textContent = "";
     }
   }
   function quitGame () {
@@ -289,7 +299,7 @@ $(function() {
   }
 
   function initialiseUserSquares() {
-    var noOfUserSquares = (userSquares.length - 7);
+    var noOfUserSquares = (userSquares.length -7);
     var userSquaresContainerObj = document.getElementById('userSquares');
 
     var userSquareObj;
@@ -336,4 +346,5 @@ $(function() {
 
 
 
+//});
 });
