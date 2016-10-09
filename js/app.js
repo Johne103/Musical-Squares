@@ -175,20 +175,20 @@ $(function() {
 
   console.log(userSquares);
 
-  var level1 = 12;
-  var level2 = 7;
-  var level3 = 0;
+  var playBtn = document.getElementById("play");
+  var selectLevel1 = document.getElementById("level1");
+  var selectLevel2 = document.getElementById("level2");
+  var selectLevel3 = document.getElementById("level3");
+  var resetBtn = document.getElementById("reset");
+  var quitBtn = document.getElementById("quit");
+
+  var userLevel = "";
 
   var clickCounter = 0;
 
 
 
-  function resetButton () {
-    clickCounter = 0;
-    for(var i=0;i<squares.length; i++) {
-      squares[i].textContent = "";
-    }
-  }
+
 
   // document.addEventListener("click", setLevel());
   //
@@ -196,13 +196,47 @@ $(function() {
   //   var setLevel = this.id;
   // }
 
-  $(function(){
-    $('ol').on("click", "button", function(){
-      var $level = (this.id);
-    });
-  });
+  playBtn.addEventListener("click", playGame);
+  selectLevel1.addEventListener("click", setUserLevel);
+  selectLevel2.addEventListener("click", setUserLevel);
+  selectLevel3.addEventListener("click", setUserLevel);
+  resetBtn.addEventListener("click", resetGame);
+  quitBtn.addEventListener("click", quitGame);
 
-  console.log(this.id);
+  function playGame () {
+    var playStart = this.id;
+  }
+
+  function setUserLevel() {
+    var userLevel = this.id;
+    console.log("user " + userLevel);
+  }
+
+  function resetGame () {
+    clickCounter = 0;
+    for(var i=0;i<squares.length; i++) {
+      squares[i].textContent = "";
+    }
+  }
+  function quitGame () {
+    var playQuit = this.id;
+  }
+
+  function getLevel(a) {
+    if (a == "level1") {
+         return 12;
+    }
+    else if (a == "level2") {
+          return 7;
+    }
+    else {
+         return 0;
+    }
+  }
+
+  // var gameLevel = getLevel(userLevel);
+  // console.log("level " + gameLevel);
+
 
   function initialiseCpuSquares() {
     var noOfCpuSquares = (cpuSquares.length - 12);
@@ -254,11 +288,38 @@ $(function() {
 // });
 // }
 
+  var gameLevel = getLevel(userLevel);
+  console.log("level " + gameLevel);
+
   initialiseCpuSquares();
 
   initialiseUserSquares();
 
 
+
+  var playSound = document.getElementById("soundToPlay");
+
+    // var playSound =  document.addEventListener("click", function(){
+    //     var noiseMaker = document.getElementById("noise-maker");
+    //     noiseMaker.src = "https://upload.wikimedia.org/wikipedia/commons/e/ef/Eastern_Whipbird.ogg";
+    //     noiseMaker.muted = true;
+    //     noiseMaker.play();
+    // });
+
+    // noiseMaker.controls = true;
+
+    var playButton = document.getElementById("play");
+    //
+    playButton.addEventListener('click', function(){
+        playSound.src = "/sounds/after.wav";
+        playSound.play();
+      });
+
+      // $(function(){
+      //   $('ol').on("click", "button", function(){
+      //     var $level = (this.id);
+      //   });
+      // });
 
 
 
