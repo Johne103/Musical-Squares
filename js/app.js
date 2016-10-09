@@ -243,16 +243,20 @@ $(function() {
     var cpuSquaresContainerObj = document.getElementById('cpuSquares');
     var cpuSquareObj;
     var imageObj;
+    var cpuAudioObj;
 
     for (var i = 0; i<noOfCpuSquares; i++) {
       cpuSquareObj = document.createElement('div');
       imageObj = document.createElement('img');
+      cpuAudioObj = document.createElement('audio');
+
 
       console.log(cpuSquareObj);
 
       imageObj.setAttribute('src', cpuSquares[i].imageSrc);
       imageObj.setAttribute('id', cpuSquares[i].imageId);
       imageObj.setAttribute('class', 'cpu-square-image');
+      cpuAudioObj.setAttribute('src', cpuSquares[i].audioSrc);
       cpuSquareObj.setAttribute('class', 'cpu-square');
       cpuSquareObj.appendChild(imageObj);
       cpuSquaresContainerObj.appendChild(cpuSquareObj);
@@ -262,8 +266,10 @@ $(function() {
   function initialiseUserSquares() {
     var noOfUserSquares = (userSquares.length - 12);
     var userSquaresContainerObj = document.getElementById('userSquares');
+    var playSound = document.getElementById("soundToPlay");
     var userSquareObj;
-    var audioObj;
+    var userAudioObj;
+    var userButtons = document.querySelectorAll("#userSquares");
 
     for (var i = 0; i<noOfUserSquares; i++) {
       userSquareObj = document.createElement('div');
@@ -280,13 +286,19 @@ $(function() {
     }
   }
 
-// function hideCpuSquare (){
-//   $(function(){
-//     cpuSquareObj[2]
-//       $(this).hide();
-//   });
-// });
-// }
+  function initaliseEventListeners () {
+    for (var i = 0; i < userButtons.length; i++) {
+      userButtons[i].addEventListener("click", playSound);
+    }
+  }
+
+  playSound = function (e) {
+    var filename = "after" + ".wav";
+    player.src = "../sounds/" + filename;
+    player.play();
+  };
+
+
 
   var gameLevel = getLevel(userLevel);
   console.log("level " + gameLevel);
@@ -295,37 +307,9 @@ $(function() {
 
   initialiseUserSquares();
 
-
-
-  var playSound = document.getElementById("soundToPlay");
-
-    // var playSound =  document.addEventListener("click", function(){
-    //     var noiseMaker = document.getElementById("noise-maker");
-    //     noiseMaker.src = "https://upload.wikimedia.org/wikipedia/commons/e/ef/Eastern_Whipbird.ogg";
-    //     noiseMaker.muted = true;
-    //     noiseMaker.play();
-    // });
-
-    // noiseMaker.controls = true;
-
-    var playButton = document.getElementById("play");
-    //
-    playButton.addEventListener('click', function(){
-        playSound.src = "/sounds/after.wav";
-        playSound.play();
-      });
-
-      // $(function(){
-      //   $('ol').on("click", "button", function(){
-      //     var $level = (this.id);
-      //   });
-      // });
+  initialiseEventListeners();
 
 
 
-
-
-// });
-// });
 
 });
