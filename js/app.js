@@ -8,97 +8,97 @@ $(function() {
   var cpuSquares = [
     {
       audioSrc: 'sounds/after.wav',
-      audioId: 'userSquareAuio0',
-      //imageSrc: 'images/slah0',
+      audioId: 'userSquareAudio0',
+      imageSrc: 'images/record_player.jpg',
       imageId: 'cpuSquareImage0'
     },
     {
       audioSrc: 'sounds/better.wav',
-      audioId: 'userSquareAuio1',
-      //imageSrc: 'images/slah1',
+      audioId: 'userSquareAudio1',
+      imageSrc: 'images/accordion.jpg',
       imageId: 'cpuSquareImage1'
     },
     {
       audioSrc: 'sounds/do_it.wav',
-      audioId: 'userSquareAuio2',
-      //imageSrc: 'images/slah2',
+      audioId: 'userSquareAudio2',
+      imageSrc: 'images/audio_waveform.jpg',
       imageId: 'cpuSquareImage2'
     },
     {
       audioSrc: 'sounds/ever.wav',
-      audioId: 'userSquareAuio3',
-      //imageSrc: 'images/slah3',
+      audioId: 'userSquareAudio3',
+      imageSrc: 'images/laptop_music_player.jpg',
       imageId: 'cpuSquareImage3'
     },
     {
       audioSrc: 'sounds/faster.wav',
-      audioId: 'userSquareAuio4',
-      //imageSrc: 'images/slah4',
+      audioId: 'userSquareAudio4',
+      imageSrc: 'images/music_cd.jpg',
       imageId: 'cpuSquareImage4'
     },
     {
       audioSrc: 'sounds/harder.wav',
-      audioId: 'userSquareAuio5',
-      //imageSrc: 'images/slah5',
+      audioId: 'userSquareAudio5',
+      imageSrc: 'images/music_keys.jpg',
       imageId: 'cpuSquareImage5'
     },
     {
       audioSrc: 'sounds/hour.wav',
-      audioId: 'userSquareAuio6',
-      //imageSrc: 'images/slah6',
+      audioId: 'userSquareAudio6',
+      imageSrc: 'images/music_player_buttons.jpg',
       imageId: 'cpuSquareImage6'
     },
     {
       audioSrc: 'sounds/make_it.wav',
-      audioId: 'userSquareAuio7',
-      //imageSrc: 'images/slah7',
+      audioId: 'userSquareAudio7',
+      imageSrc: 'images/music_roll.jpg',
       imageId: 'cpuSquareImage7'
     },
     {
       audioSrc: 'sounds/makes_us.wav',
-      audioId: 'userSquareAuio8',
-      //imageSrc: 'images/slah8',
+      audioId: 'userSquareAudio8',
+      imageSrc: 'images/portable_music.jpg',
       imageId: 'cpuSquareImage8'
     },
     {
       audioSrc: 'sounds/do_it.wav',
-      audioId: 'userSquareAuio9',
-      //imageSrc: 'images/slah9',
+      audioId: 'userSquareAudio9',
+      imageSrc: 'images/slah9',
       imageId: 'cpuSquareImage9'
     },
     {
       audioSrc: 'sounds/ever.wav',
-      audioId: 'userSquareAuio10',
-      //imageSrc: 'images/slah10',
+      audioId: 'userSquareAudio10',
+      imageSrc: 'images/slah10',
       imageId: 'cpuSquareImage10'
     },
     {
       audioSrc: 'sounds/faster.wav',
-      audioId: 'userSquareAuio11',
-      //imageSrc: 'images/slah11',
+      audioId: 'userSquareAudio11',
+      imageSrc: 'images/slah11',
       imageId: 'cpuSquareImage11'
     },
     {
       audioSrc: 'sounds/harder.wav',
-      audioId: 'userSquareAuio12',
+      audioId: 'userSquareAudio12',
       //imageSrc: 'images/slah12',
       imageId: 'cpuSquareImage12'
     },
     {
       audioSrc: 'sounds/hour.wav',
-      audioId: 'userSquareAuio13',
+      audioId: 'userSquareAudio13',
       //imageSrc: 'images/slah13',
       imageId: 'cpuSquareImage13'
     },
     {
       audioSrc: 'sounds/make_it.wav',
-      audioId: 'userSquareAuio14',
+      audioId: 'userSquareAudio14',
       //imageSrc: 'images/slah14',
       imageId: 'cpuSquareImage14'
     },
     {
       audioSrc: 'sounds/makes_us.wav',
-      audioId: 'userSquareAuio15',
+      audioId: 'userSquareAudio15',
       //imageSrc: 'images/slah15',
       imageId: 'cpuSquareImage15'
     }
@@ -109,67 +109,67 @@ $(function() {
   var userSquares = [
     {
       audioSrc: 'sounds/after.wav',
-      audioId: 'userSquareAuio0',
+      audioId: 'userSquareAudio0',
     },
     {
       audioSrc: 'sounds/better.wav',
-      audioId: 'userSquareAuio1',
+      audioId: 'userSquareAudio1',
     },
     {
       audioSrc: 'sounds/do_it.wav',
-      audioId: 'userSquareAuio2',
+      audioId: 'userSquareAudio2',
     },
     {
       audioSrc: 'sounds/ever.wav',
-      audioId: 'userSquareAuio3',
+      audioId: 'userSquareAudio3',
     },
     {
       audioSrc: 'sounds/faster.wav',
-      audioId: 'userSquareAuio4',
+      audioId: 'userSquareAudio4',
     },
     {
       audioSrc: 'sounds/harder.wav',
-      audioId: 'userSquareAuio5',
+      audioId: 'userSquareAudio5',
     },
     {
       audioSrc: 'sounds/hour.wav',
-      audioId: 'userSquareAuio6',
+      audioId: 'userSquareAudio6',
     },
     {
       audioSrc: 'sounds/make_it.wav',
-      audioId: 'userSquareAuio7',
+      audioId: 'userSquareAudio7',
     },
     {
       audioSrc: 'sounds/makes_us.wav',
-      audioId: 'userSquareAuio8',
+      audioId: 'userSquareAudio8',
     },
     {
       audioSrc: 'sounds/do_it.wav',
-      audioId: 'userSquareAuio9',
+      audioId: 'userSquareAudio9',
     },
     {
       audioSrc: 'sounds/ever.wav',
-      audioId: 'userSquareAuio10',
+      audioId: 'userSquareAudio10',
     },
     {
       audioSrc: 'sounds/faster.wav',
-      audioId: 'userSquareAuio11',
+      audioId: 'userSquareAudio11',
     },
     {
       audioSrc: 'sounds/harder.wav',
-      audioId: 'userSquareAuio12',
+      audioId: 'userSquareAudio12',
     },
     {
       audioSrc: 'sounds/hour.wav',
-      audioId: 'userSquareAuio13',
+      audioId: 'userSquareAudio13',
     },
     {
       audioSrc: 'sounds/make_it.wav',
-      audioId: 'userSquareAuio14',
+      audioId: 'userSquareAudio14',
     },
     {
       audioSrc: 'sounds/makes_us.wav',
-      audioId: 'userSquareAuio15',
+      audioId: 'userSquareAudio15',
     }
   ];
 
@@ -181,6 +181,7 @@ $(function() {
   var selectLevel3 = document.getElementById("level3");
   var resetBtn = document.getElementById("reset");
   var quitBtn = document.getElementById("quit");
+  var playSound = document.getElementById("soundToPlay");
 
   var userLevel = "";
 
@@ -202,6 +203,30 @@ $(function() {
   selectLevel3.addEventListener("click", setUserLevel);
   resetBtn.addEventListener("click", resetGame);
   quitBtn.addEventListener("click", quitGame);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var playSound = document.getElementById("soundToPlay");
+
+    for (var i = 0; i < userSquares.length; i++) {
+      userSquares[i].addEventListener('click', function() {
+        console.log('switch ' + this.id);
+        switch (this.id) {
+        case 'userSquareAudio0':
+          playSound.src = audioSrc;
+          break;
+        case 'userSquareAudio1':
+          playSound.src = audioSrc;
+          break;
+        case 'userSquareAudio2':
+          playSound.src = audioSrc;
+          break;
+        }
+
+        playSound.play();
+      });
+    }
+  });
+
 
   function playGame () {
     var playStart = this.id;
@@ -266,7 +291,7 @@ $(function() {
   function initialiseUserSquares() {
     var noOfUserSquares = (userSquares.length - 7);
     var userSquaresContainerObj = document.getElementById('userSquares');
-    var playSound = document.getElementById("soundToPlay");
+
     var userSquareObj;
     var userAudioObj;
     var userButtons = document.querySelectorAll("#userSquares");
@@ -286,28 +311,27 @@ $(function() {
     }
   }
 
-  function initaliseEventListeners () {
-    for (var i = 0; i < userButtons.length; i++) {
-      userButtons[i].addEventListener("click", playSound);
-    }
-  }
+  // function initaliseEventListeners() {
+  //   for (var i = 0; i < userSquares.length; i++) {
+  //     userSquares[i].addEventListener("click", playSound);
+  //   }
+  // }
 
-  playSound = function (e) {
-    var filename = "after" + ".wav";
-    player.src = "../sounds/" + filename;
-    player.play();
-  };
+
 
 
 
   var gameLevel = getLevel(userLevel);
   console.log("level " + gameLevel);
 
+
+
+
   initialiseCpuSquares();
 
   initialiseUserSquares();
 
-  initialiseEventListeners();
+  //initaliseEventListeners();
 
 
 
