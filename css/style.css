@@ -1,11 +1,24 @@
 body {
   max-width: 600px;
+  background-image: url(../images/musical_notes.jpg);
   margin: 0 auto;
-  /*background-image: url("images/musical_notes.jpg');*/
+  background-size: cover;
+  background-position: center;
 }
 
-h1, h2 {
+h1 {
   font-family: Papyrus, fantasy;
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 800;
+  line-height: 26.4px;
+  text-align: center;
+}
+
+h2 {
+  font-family: Papyrus, fantasy;
+  color: red;
   font-size: 40px;
   font-style: normal;
   font-variant: normal;
@@ -20,9 +33,24 @@ h1, h2 {
   margin: auto;
 }
 
-.cpu-square {
+#cpuSquares div {
   display: inline-block;
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+#cpuSquares div:nth-child(1) { background-image: url(../images/accordion.jpg); }
+#cpuSquares div:nth-child(2) { background-image: url(../images/audio_waveform.jpg); }
+#cpuSquares div:nth-child(3) { background-image: url(../images/laptop_music_player.jpg); }
+#cpuSquares div:nth-child(4) { background-image: url(../images/music_cd.jpg); }
+#cpuSquares div:nth-child(5) { background-image: url(../images/music_keys.jpg); }
+#cpuSquares div:nth-child(6) { background-image: url(../images/music_player_buttons.jpg); }
+#cpuSquares div:nth-child(7) { background-image: url(../images/music_roll.jpg); }
+#cpuSquares div:nth-child(8) { background-image: url(../images/musical_notes.jpg); }
+#cpuSquares div:nth-child(9) { background-image: url(../images/portable_music.jpg); }
 
 .cpu-square-image {
   width: 60px;
@@ -34,6 +62,16 @@ h1, h2 {
   width: 225px;
   margin: auto;
 
+}
+
+#userSquares div {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: grey;
 }
 
 .user-square {
@@ -55,10 +93,11 @@ h1, h2 {
 
 ol {
   list-style: none;
-  margin: auto;
+  display: inline;
+  /*margin: auto;
   margin-top: 10px;
   padding: 0px;
-  text-align: center;
+  text-align: center;*/
 }
 
 #play {

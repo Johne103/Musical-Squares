@@ -228,17 +228,17 @@ $(function() {
 
   //$('div').one('click', function() {
 
-  // $(function(){
-  //   $('div').on("click", function() {
-  //     var $element = $(this);
-  //     $element.hide("slow", "swing", function(){
-  //       setTimeout(function(){
-  //         $element.show();
-  //       }, 1000);
-  //     });
-  //   });
-  // });
-//});
+  $(function(){
+    $('.cpu-square').on("click", function() {
+      var $element = $(this);
+      $element.hide("slow", "swing", function(){
+        setTimeout(function(){
+          $element.show();
+        }, 1000);
+      });
+    });
+  });
+});
   function playGame () {
     var playStart = this.id;
     console.log("play " + playStart);
@@ -251,10 +251,10 @@ $(function() {
 
     for (var i = 0; i<noOfCpuSquares; i++) {
       var $element = cpuSquares[i];
-      $element.hide("slow", {
-        // setTimeout(function(){
-        //   $element.show();
-        //   }, 1000);
+      $element.hide("slow", function() {
+        setTimeout(function(){
+           $element.show();
+           }, 1000);
          });
     }
   }
