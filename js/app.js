@@ -1,6 +1,5 @@
 $(function() {
-  //$('div').one('click', function() {
-  //$('div').one('click', function() {
+
   //document.addEventListener('DOMContentLoaded', function () {
 
 
@@ -227,19 +226,37 @@ $(function() {
     }
   });
 
-  $(function(){
-    $('div').on("click", function() {
-      var $element = $(this);
-      $element.hide("slow", "swing", function(){
-        setTimeout(function(){
-          $element.show();
-        }, 1000);
-      });
-    });
-  });
+  //$('div').one('click', function() {
 
+  // $(function(){
+  //   $('div').on("click", function() {
+  //     var $element = $(this);
+  //     $element.hide("slow", "swing", function(){
+  //       setTimeout(function(){
+  //         $element.show();
+  //       }, 1000);
+  //     });
+  //   });
+  // });
+//});
   function playGame () {
     var playStart = this.id;
+    console.log("play " + playStart);
+
+    initialiseCpuSquares();
+
+    initialiseUserSquares();
+
+    var noOfCpuSquares = (cpuSquares.length - 7);
+
+    for (var i = 0; i<noOfCpuSquares; i++) {
+      var $element = cpuSquares[i];
+      $element.hide("slow", {
+        // setTimeout(function(){
+        //   $element.show();
+        //   }, 1000);
+         });
+    }
   }
 
   function setUserLevel() {
@@ -337,9 +354,9 @@ $(function() {
 
 
 
-  initialiseCpuSquares();
-
-  initialiseUserSquares();
+  // initialiseCpuSquares();
+  //
+  // initialiseUserSquares();
 
   //initaliseEventListeners();
 
