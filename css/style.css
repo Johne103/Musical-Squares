@@ -18,6 +18,9 @@ h1 {
 
 h2 {
   font-family: Papyrus, fantasy;
+  width: 120px;
+  margin: auto;
+  margin-top: 30px;
   color: red;
   font-size: 40px;
   font-style: normal;
@@ -71,8 +74,19 @@ h2 {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: grey;
 }
+
+#userSquares div:nth-child(1) { background-image: url(../images/accordion.jpg); }
+#userSquares div:nth-child(2) { background-image: url(../images/audio_waveform.jpg); }
+#userSquares div:nth-child(3) { background-image: url(../images/laptop_music_player.jpg); }
+#userSquares div:nth-child(4) { background-image: url(../images/music_cd.jpg); }
+#userSquares div:nth-child(5) { background-image: url(../images/music_keys.jpg); }
+#userSquares div:nth-child(6) { background-image: url(../images/music_player_buttons.jpg); }
+#userSquares div:nth-child(7) { background-image: url(../images/music_roll.jpg); }
+#userSquares div:nth-child(8) { background-image: url(../images/musical_notes.jpg); }
+#userSquares div:nth-child(9) { background-image: url(../images/portable_music.jpg); }
+
+
 
 .user-square {
   display: inline-block;
@@ -94,11 +108,29 @@ h2 {
 ol {
   list-style: none;
   display: inline;
-  /*margin: auto;
-  margin-top: 10px;
-  padding: 0px;
-  text-align: center;*/
+  width: 100px;
+  margin: 0px;
 }
+
+li {
+  display: inline;
+  width: 80px;
+  height: 50px;
+  border: 1px solid;
+  border-width: medium;;
+  color: rgb(0,0,0);
+  vertical-align: top;
+  font-size: 20px;
+  line-height: 50px;
+  margin: 0px;
+
+/*#Score {
+  color: black;
+}
+
+#Feedback {
+  color: black;
+}*/
 
 #play {
   width: 50px;
