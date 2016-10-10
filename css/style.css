@@ -18,6 +18,7 @@ h1 {
 
 h2 {
   font-family: Papyrus, fantasy;
+  display: inline;
   width: 120px;
   margin: auto;
   margin-top: 30px;
@@ -107,9 +108,12 @@ h2 {
 
 ol {
   list-style: none;
-  display: inline;
-  width: 100px;
-  margin: 0px;
+  display:inline;
+  width: 150px;
+  margin: auto;;
+  vertical-align: top;
+  text-align: center;
+
 }
 
 li {
@@ -123,47 +127,28 @@ li {
   font-size: 20px;
   line-height: 50px;
   margin: 0px;
-
-/*#Score {
-  color: black;
 }
 
-#Feedback {
-  color: black;
-}*/
-
-#play {
-  width: 50px;
+#easy {
+  width: 80px;
   height: 30px;
   border-radius: 50px;
 }
 
-#level1 {
-  width: 60px;
+#medium {
+  width: 80px;
   height: 30px;
   border-radius: 50px;
 }
 
-#level2 {
-  width: 60px;
-  height: 30px;
-  border-radius: 50px;
-}
-
-#level3 {
-  width: 60px;
+#hard {
+  width: 80px;
   height: 30px;
   border-radius: 50px;
 }
 
 #reset {
-  width: 60px;
-  height: 30px;
-  border-radius: 50px;
-}
-
-#quit {
-  width: 60px;
+  width: 80px;
   height: 30px;
   border-radius: 50px;
 }
