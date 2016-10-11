@@ -24,7 +24,7 @@
         <li id="playerTurn"></li>
         <li id="player1">Player 1 Score: <span id="score1"></span></li>
         <li id="player2">Player 2 Score: <span id="score2"></span></li>
-        <li id="result">Result</li>
+        <li id="result"></li>
       </ul>
 
     </div>
@@ -74,9 +74,10 @@
         <button id="hard">HARD</button>
         <button id="reset">RESET</button>
       </ol>
-      
+
       <p>
-        Take turns to click on the image on the right hand grid before the corresponding image and sound disapears on the left hand grid. <span> Score points when you correctly click the correct image on the right before the image on the left is lost.</span> If you click on the wrong image it will be lost.
+        <span id="instruct1">Click on either the EASY, MEDIUM or HARD buttons to start the game. Click RESET to restart.</span>
+        Take turns to click on the image on the right hand grid before the corresponding image and sound disapears on the left hand grid. <span id="instruct2"> Score points when you correctly click the correct image on the right before the image on the left disapears completely.</span> <span id="instruct3">If you click on the wrong image it will be removed from the grid and you will lose your turn.</span>
       </p>
 
     </div>

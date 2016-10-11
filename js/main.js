@@ -1,5 +1,20 @@
+//WDI-idn-23 integer project 1. created by John Evans release 1.0 12 October 2016.
+//First project to create a game in order to develop an improved understanding of the approach required to create and deploy for general use a viable working web based game.
 
-function shuffle(a) {
+//Musical Squares is a 2 player game that tests the visual and auditory response times of users. A random grid of images and sounds are presented to the players with the aim of capturing a square that is the process of being removed from the grid.
+
+//The game has 3 levels of easy, medium and hard with corresponding reductions in reaction times at 5 seconds, 3 seconds and 1 second.
+
+//The player with the most captured images of the 8 possible turns each; wins.
+
+//Instructions for playing the game: Click on either the EASY, MEDIUM or HARD buttons to start the game. Click RESET to restart.
+
+//Take turns to click on the image on the right hand grid before the corresponding image and sound. disapears on the left hand grid. Score points when you correctly click the correct image on the right before the image on the left disapears completely.
+
+//If you click on the wrong image it will be removed from the grid and you will lose your turn.
+
+
+function shuffle(a) {                             //Randomise the image and the sounds for the left grid.
   var j, x, i;
   for (i = a.length; i; i--) {
     j = Math.floor(Math.random() * i);
@@ -9,7 +24,7 @@ function shuffle(a) {
   }
 }
 
-$(function() {
+$(function() {                                    //Initialise the variables
   var $cpuSquares = $('#cpuSquares div');
   var $userSquares = $('#userSquares div');
   var audio = $('#soundToPlay')[0];
@@ -30,12 +45,12 @@ $(function() {
   var responseTime = 5000;
   var timers;
 
-
+                                                  //Set the listener for clicking the control buttons.
   $easyBtn.on("click", setEasy);
   $medBtn.on("click", setMed);
   $hardBtn.on("click", setHard);
   $resetBtn.on("click", resetGame);
-
+                                                  //Set the response times to 1, 3 or 5 secs before starting the game using the corresponding button.
   function setEasy () {
     responseTime = 5000;
     console.log("responseTime " + responseTime);
@@ -56,7 +71,7 @@ $(function() {
     $(this).addClass("active");
     playGame();
   }
-
+                                                                //Reinitialise variables and settings
   function resetGame () {
     console.log('reset pressed');
 
@@ -90,14 +105,14 @@ $(function() {
     $result.text("");
   }
 
-  function playGame() {
+  function playGame() {                                           //Start the game
 
-    $score1.text(user1Score);
+    $score1.text(user1Score);                                     //Display initial player scores
     $score2.text(user1Score);
 
-    $playerTurn.text(whosTurn);
+    $playerTurn.text(whosTurn);                                   //Clear text area showing player turn
 
-    shuffle($cpuSquares);
+    shuffle($cpuSquares);                                         //Shuffle the left hand grid
 
     timers = $cpuSquares.toArray().map(function(square, i) {
       var parent = $("#cpuSquares");

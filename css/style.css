@@ -226,7 +226,17 @@ li {
   background-color: darkgrey;
 }
 
-p span {
+#instruct1 {
+  color: green;
+  font-weight: 600;
+}
+
+#instruct2 {
+  color: blue;
+  font-weight: 600;
+}
+
+#instruct3 {
   color: red;
 }
 
