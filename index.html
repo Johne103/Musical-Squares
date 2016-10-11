@@ -1,58 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musical Squares</title>
-    <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="./js/main.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css"> -->
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-  </head>
-  <body>
-    <h1>Musical Squares</h1>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musical Squares</title>
+  <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+  <h1>Musical Squares</h1>
 
-    <audio id="soundToPlay"></audio>
+  <audio id="soundToPlay"></audio>
+  <main>
 
-    <div id="cpuSquares">
-      <div data-filename="Alarm"></div>
-      <div data-filename="Boat"></div>
-      <div data-filename="Fireworks2"></div>
-      <div data-filename="Flatlinetone"></div>
-      <div data-filename="Mothership1"></div>
-      <div data-filename="Fireworksfizzle2"></div>
-      <div data-filename="Pinballmachine"></div>
-      <div data-filename="Satellitenoise"></div>
-      <div data-filename="Startrace"></div>
+
+
+
+    <div class="scores">
+      <ul>
+        <li id="playerTurn"></li>
+        <li id="player1">Player 1 Score: <span id="score1"></span></li>
+        <li id="player2">Player 2 Score: <span id="score2"></span></li>
+        <li id="result">Result</li>
+      </ul>
+
     </div>
 
-    <li id="player1">Player 1 Score:</li>
-    <li id="player2">Player 2 Score:</li>
+    <div class="boards">
+      <div id="cpuSquares">
+        <div data-filename="Alarm"></div>
+        <div data-filename="Boat"></div>
+        <div data-filename="Fireworks2"></div>
+        <div data-filename="Flatlinetone"></div>
+        <div data-filename="Mothership1"></div>
+        <div data-filename="Fireworksfizzle2"></div>
+        <div data-filename="Pinballmachine"></div>
+        <div data-filename="Satellitenoise"></div>
+        <div data-filename="Startrace"></div>
+        <div data-filename="Alarm"></div>
+        <div data-filename="Boat"></div>
+        <div data-filename="Fireworks2"></div>
+        <div data-filename="Flatlinetone"></div>
+        <div data-filename="Mothership1"></div>
+        <div data-filename="Fireworksfizzle2"></div>
+        <div data-filename="Pinballmachine"></div>
+      </div>
 
-    <ol>
-      <li id="score1"></li>
-      <li id="score2"></li>
-      <li id="result"></li>
-    </ol>
+      <div id="userSquares">
+        <div data-filename="Alarm"></div>
+        <div data-filename="Boat"></div>
+        <div data-filename="Fireworks2"></div>
+        <div data-filename="Flatlinetone"></div>
+        <div data-filename="Mothership1"></div>
+        <div data-filename="Fireworksfizzle2"></div>
+        <div data-filename="Pinballmachine"></div>
+        <div data-filename="Satellitenoise"></div>
+        <div data-filename="Startrace"></div>
+        <div data-filename="Alarm"></div>
+        <div data-filename="Boat"></div>
+        <div data-filename="Fireworks2"></div>
+        <div data-filename="Flatlinetone"></div>
+        <div data-filename="Mothership1"></div>
+        <div data-filename="Fireworksfizzle2"></div>
+        <div data-filename="Pinballmachine"></div>
+      </div>
 
-    <ol>
-      <button id="easy">EASY</button>
-      <!-- <button id="medium">MED PLAY</button> -->
-      <button id="hard">HARD</button>
-      <button id="reset">RESET</button>
-    </ol>
+      <ol id="gameButtons">
+        <button id="easy">EASY</button>
+        <button id="medium">MEDIUM</button>
+        <button id="hard">HARD</button>
+        <button id="reset">RESET</button>
+      </ol>
+      
+      <p>
+        Take turns to click on the image on the right hand grid before the corresponding image and sound disapears on the left hand grid. <span> Score points when you correctly click the correct image on the right before the image on the left is lost.</span> If you click on the wrong image it will be lost.
+      </p>
 
-    <div id="userSquares">
-      <div data-filename="Alarm"></div>
-      <div data-filename="Boat"></div>
-      <div data-filename="Fireworks2"></div>
-      <div data-filename="Flatlinetone"></div>
-      <div data-filename="Mothership1"></div>
-      <div data-filename="Fireworksfizzle2"></div>
-      <div data-filename="Pinballmachine"></div>
-      <div data-filename="Satellitenoise"></div>
-      <div data-filename="Startrace"></div>
     </div>
 
-  </body>
+  </main>
+</body>
 </html>

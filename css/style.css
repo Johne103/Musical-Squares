@@ -1,60 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  max-width: 600px;
+  max-width: 960px;
   background-image: url(../images/musical_notes.jpg);
   margin: 0 auto;
   background-size: cover;
   background-position: center;
+  font-family: 'Work Sans', sans-serif;
+}
+
+main {
+background-color: white;
+border-radius: 20px;
+padding: 30px;
+overflow: hidden;
+
 }
 
 h1 {
-  font-family: Papyrus, fantasy;
+  /*font-family: Papyrus, fantasy;*/
   font-size: 60px;
   font-style: normal;
   font-variant: normal;
   font-weight: 800;
   line-height: 26.4px;
   text-align: center;
+  margin: 50px 0;
+}
+
+.scores {
+  width: 30%;
+  float: left;
+
+}
+
+.boards {
+  width: 70%;
+  float: left;
+
+}
+
+#playerTurn {
+  /*font-family: Papyrus, fantasy;*/
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  color: red;
+}
+
+#playerTurn.green {
+  color: green;
 }
 
 #player1 {
-  font-family: Papyrus, fantasy;
-  display: inline;
-  width: 120px;
-  margin: auto;
+  /*font-family: Papyrus, fantasy;*/
   margin-top: 30px;
   color: red;
-  font-size: 40px;
+  font-size: 20px;
   font-style: normal;
-  font-variant: normal;
   font-weight: 800;
   line-height: 26.4px;
-  text-align: center;
 }
 
 #player2 {
-  font-family: Papyrus, fantasy;
-  display:inline;
-  width: 120px;
-  margin: auto;
+  /*font-family: Papyrus, fantasy;*/
   margin-top: 30px;
   color: green;
-  font-size: 40px;
+  font-size: 20px;
   font-style: normal;
-  font-variant: normal;
   font-weight: 800;
   line-height: 26.4px;
-  text-align: center;
 }
 
 #cpuSquares {
   width: 225px;
+  display: inline-block;
   margin: auto;
+  margin-right: 20px;
 }
 
 #cpuSquares div {
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -69,6 +99,13 @@ h1 {
 #cpuSquares div:nth-child(7) { background-image: url(../images/music_roll.jpg); }
 #cpuSquares div:nth-child(8) { background-image: url(../images/musical_notes.jpg); }
 #cpuSquares div:nth-child(9) { background-image: url(../images/portable_music.jpg); }
+#cpuSquares div:nth-child(10) { background-image: url(../images/accordion.jpg); }
+#cpuSquares div:nth-child(11) { background-image: url(../images/audio_waveform.jpg); }
+#cpuSquares div:nth-child(12) { background-image: url(../images/laptop_music_player.jpg); }
+#cpuSquares div:nth-child(13) { background-image: url(../images/music_cd.jpg); }
+#cpuSquares div:nth-child(14) { background-image: url(../images/music_keys.jpg); }
+#cpuSquares div:nth-child(15) { background-image: url(../images/music_player_buttons.jpg); }
+#cpuSquares div:nth-child(16) { background-image: url(../images/music_roll.jpg); }
 
 .cpu-square-image {
   width: 60px;
@@ -78,14 +115,15 @@ h1 {
 
 #userSquares {
   width: 225px;
+  display: inline-block;
   margin: auto;
 
 }
 
 #userSquares div {
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -100,6 +138,13 @@ h1 {
 #userSquares div:nth-child(7) { background-image: url(../images/music_roll.jpg); }
 #userSquares div:nth-child(8) { background-image: url(../images/musical_notes.jpg); }
 #userSquares div:nth-child(9) { background-image: url(../images/portable_music.jpg); }
+#userSquares div:nth-child(10) { background-image: url(../images/accordion.jpg); }
+#userSquares div:nth-child(11) { background-image: url(../images/audio_waveform.jpg); }
+#userSquares div:nth-child(12) { background-image: url(../images/laptop_music_player.jpg); }
+#userSquares div:nth-child(13) { background-image: url(../images/music_cd.jpg); }
+#userSquares div:nth-child(14) { background-image: url(../images/music_keys.jpg); }
+#userSquares div:nth-child(15) { background-image: url(../images/music_player_buttons.jpg); }
+#userSquares div:nth-child(16) { background-image: url(../images/music_roll.jpg); }
 
 
 
@@ -122,25 +167,23 @@ h1 {
 
 ol {
   list-style: none;
-  display:inline;
-  width: 150px;
-  margin: auto;;
-  vertical-align: top;
-  text-align: center;
+  padding: 0;
+}
 
+ul {
+  list-style: none;
 }
 
 li {
-  display: inline;
-  width: 80px;
-  height: 50px;
-  border: 1px solid;
-  border-width: medium;;
   color: rgb(0,0,0);
-  vertical-align: top;
   font-size: 20px;
   line-height: 50px;
   margin: 0px;
+}
+
+#gameButtons {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #easy {
@@ -149,11 +192,19 @@ li {
   border-radius: 50px;
 }
 
-/*#medium {
+#easy:hover {
+  background-color: darkgrey;
+}
+
+#medium {
   width: 80px;
   height: 30px;
   border-radius: 50px;
-}*/
+}
+
+#medium:hover {
+  background-color: darkgrey;
+}
 
 #hard {
   width: 80px;
@@ -161,8 +212,25 @@ li {
   border-radius: 50px;
 }
 
+#hard:hover {
+  background-color: darkgrey;
+}
+
 #reset {
   width: 80px;
   height: 30px;
   border-radius: 50px;
+}
+
+#reset:hover {
+  background-color: darkgrey;
+}
+
+p span {
+  color: red;
+}
+
+button.active {
+  background-color: green;
+
 }
