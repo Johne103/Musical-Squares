@@ -78,7 +78,7 @@ $(function() {                                                  //Initialise the
     console.log('reset pressed');
 
 
-    $playerTurn.text("Click EASY, MEDIUM or HARD to START PLAY");
+    $playerTurn.text("LET'S PLAY");
 
     clickCounter = 0;
     fadeCounter = 0;
@@ -152,8 +152,6 @@ $(function() {                                                  //Initialise the
           $playerTurn.toggleClass("green");
           $playerTurn.text("Player 2 to Play");
         } else {
-
-          //$playerTurn.text('Player 1 to Play');
 
           user2Score++;                                           //Increment player 2 score.
           console.log('user2 ' + user2Score);
