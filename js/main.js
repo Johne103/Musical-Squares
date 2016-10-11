@@ -114,27 +114,28 @@ $(function() {                                    //Initialise the variables
 
     shuffle($cpuSquares);                                         //Shuffle the left hand grid
 
-    timers = $cpuSquares.toArray().map(function(square, i) {
-      var parent = $("#cpuSquares");
-      return setTimeout(function() {
-        currentIndex = i;
+    timers = $cpuSquares.toArray().map(function(square, i) {      //Create a holding array for shuffled
+      var parent = $("#cpuSquares");                              //left grid to map correct sounds to
+      return setTimeout(function() {                              //to rerranged index elements, and
+        currentIndex = i;                                         //manage timings for fading images.
         audio.src = "sounds/" + $(square).data('filename') + ".wav";
         console.log(audio.src);
         audio.play();
-        $(square).fadeTo(responseTime, 0);
-      }, i * responseTime);
+        $(square).fadeTo(responseTime, 0);                        //Play audio and fade image of selected
+      }, i * responseTime);                                       //image.
     });
 
-    $userSquares.one('click', function() {
-
-      clickCounter++;
-      $playerTurn.toggleClass("green");
+    $userSquares.one('click', function() {                        //Limit number of clicks to one on
+                                                                  //right hand grid for each player turn.
+      clickCounter++;                                             //Count the total number of click for
+                                                                  //current game session.
+      $playerTurn.toggleClass("green");                           //Show player 2 as green -default red.
       console.log('clickCounter ' + clickCounter);
-      var parent = $("#userSquares");
-      var filename = $(this).data('filename') + ".wav";
+      var parent = $("#userSquares");                             //Identify sound played on right grid,
+      var filename = $(this).data('filename') + ".wav";           //and build file name for sound played.
       var fileBeingPlayed = audio.src.split('/').slice(-1)[0];
-      if(filename === fileBeingPlayed) {
-        $cpuSquares.eq(currentIndex).stop(true, false);
+      if(filename === fileBeingPlayed) {                          //Compare sound on right & left grid
+        $cpuSquares.eq(currentIndex).stop(true, false);           //If sounds is matched stop fade out
         if (clickCounter%2 === 0) {
 
           $playerTurn.text('Player 1 to Play');
