@@ -13,10 +13,13 @@ $(function() {
   var $cpuSquares = $('#cpuSquares div');
   var $userSquares = $('#userSquares div');
   var audio = $('#soundToPlay')[0];
-  var $score = $('#score');
+  var $score1 = $('#score1');
+  var $score2 = $('#score2');
   var $feedback = $('#feedback');
   var currentIndex = 0;
-  var userScore = 0;
+  var user1Score = 0;
+  var user2Score = 0;
+  var clickCounter = 0;
   var feedBack = "";
   var responseTime = 500;
   var easyBtn = document.getElementById("easy");
@@ -58,7 +61,9 @@ $(function() {
 
   function playGame () {
 
-  $score.text(userScore);
+  $score1.text(user1Score);
+  $score2.text(user1Score);
+
 
   shuffle($cpuSquares);
 
@@ -74,15 +79,28 @@ $(function() {
   });
 
   $userSquares.one('click', function() {
+
+
+      clickCounter++;
+      console.log('clickCounter ' + clickCounter);
     var parent = $("#userSquares");
     var filename = $(this).data('filename') + ".wav";
     var fileBeingPlayed = audio.src.split('/').slice(-1)[0];
     if(filename === fileBeingPlayed) {
       $cpuSquares.eq(currentIndex).stop(true, false);
-      userScore++;
-      console.log(userScore);
-      $score.text(userScore);
-      $(this).css({background: "red"});
+      if (clickCounter%2 === 0) {
+
+
+        user1Score++;
+        console.log(user1Score);
+        $score1.text(user1Score);
+        $(this).css({background: "red"});}
+      else {
+        user1Score++;
+        console.log(user2Score);
+        $score2.text(user2Score);
+        $(this).css({background: "green"});
+      }
     }
     else {
       $(this).css({ opacity: 0 });
