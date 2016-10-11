@@ -8,7 +8,7 @@ body {
 
 h1 {
   font-family: Papyrus, fantasy;
-  font-size: 50px;
+  font-size: 60px;
   font-style: normal;
   font-variant: normal;
   font-weight: 800;
@@ -16,7 +16,7 @@ h1 {
   text-align: center;
 }
 
-h2 {
+#player1 {
   font-family: Papyrus, fantasy;
   display: inline;
   width: 120px;
@@ -31,6 +31,20 @@ h2 {
   text-align: center;
 }
 
+#player2 {
+  font-family: Papyrus, fantasy;
+  display:inline;
+  width: 120px;
+  margin: auto;
+  margin-top: 30px;
+  color: green;
+  font-size: 40px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 800;
+  line-height: 26.4px;
+  text-align: center;
+}
 
 #cpuSquares {
   width: 225px;
@@ -135,11 +149,11 @@ li {
   border-radius: 50px;
 }
 
-#medium {
+/*#medium {
   width: 80px;
   height: 30px;
   border-radius: 50px;
-}
+}*/
 
 #hard {
   width: 80px;

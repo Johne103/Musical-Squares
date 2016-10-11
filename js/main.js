@@ -15,7 +15,7 @@ $(function() {
   var audio = $('#soundToPlay')[0];
   var $score1 = $('#score1');
   var $score2 = $('#score2');
-  var $feedback = $('#feedback');
+  var $result = $('#result');
   var currentIndex = 0;
   var user1Score = 0;
   var user2Score = 0;
@@ -23,13 +23,13 @@ $(function() {
   var feedBack = "";
   var responseTime = 500;
   var easyBtn = document.getElementById("easy");
-  var medBtn = document.getElementById("medium");
+  // var medBtn = document.getElementById("medium");
   var hardBtn = document.getElementById("hard");
   var resetBtn = document.getElementById("reset");
 
 
   easyBtn.addEventListener("click", setEasy);
-  medBtn.addEventListener("click", setMed);
+  //medBtn.addEventListener("click", setMed);
   hardBtn.addEventListener("click", setHard);
   resetBtn.addEventListener("click", resetGame);
 
@@ -43,11 +43,11 @@ $(function() {
     playGame();
    }
 
-  function setMed () {
-     var responseTime = timer(3000);
-     console.log("responseTime " + responseTime);
-     playGame();
-    }
+  // function setMed () {
+  //    var responseTime = timer(3000);
+  //    console.log("responseTime " + responseTime);
+  //    playGame();
+  //   }
 
   function setHard () {
       var responseTime = timer(1000);
@@ -56,6 +56,7 @@ $(function() {
      }
 
   function resetGame () {
+    console.log('reset pressed');
     playGame ();
   }
 
@@ -74,8 +75,8 @@ $(function() {
       audio.src = "sounds/" + $(square).data('filename') + ".wav";
       console.log(audio.src);
       audio.play();
-      $(square).fadeTo(5000, 0);
-    }, i * 5000);
+      $(square).fadeTo(responseTime, 0);
+    }, i * responseTime);
   });
 
   $userSquares.one('click', function() {
@@ -96,7 +97,7 @@ $(function() {
         $score1.text(user1Score);
         $(this).css({background: "red"});}
       else {
-        user1Score++;
+        user2Score++;
         console.log(user2Score);
         $score2.text(user2Score);
         $(this).css({background: "green"});
@@ -105,6 +106,25 @@ $(function() {
     else {
       $(this).css({ opacity: 0 });
     }
+    var theResult = getWinner(user1Score, user2Score);
+    console.log("result " + theResult);
   });
-}
+
+  function getWinner (a, b) {
+  console.log(a, b);
+  if (a > b ) {
+      document.getElementById("result").textContent = "Player 1 Wins this time";
+      console.log("player1");
+  } else if (b > a )  {
+      document.getElementById("result").textContent = "Player 2 Wins this time";
+      console.log("Player2");
+  } else {
+      document.getElementById("result").textContent = "It's a Draw";
+      console.log("draw");
+  }
+  }
+
+  }
+
+
 });
