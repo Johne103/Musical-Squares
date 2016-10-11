@@ -107,14 +107,6 @@ $(function() {
         console.log(audio.src);
         audio.play();
         $(square).fadeTo(responseTime, 0);
-        setTimeout(function() {
-          fadeCounter++;
-          console.log('fadecounter ' + fadeCounter + $cpuSquares.length);
-          if (fadeCounter == $cpuSquares.length) {
-
-            getWinner(user1Score, user2Score);
-          }
-        }, responseTime);
       }, i * responseTime);
     });
 
@@ -142,7 +134,7 @@ $(function() {
           user2Score++;
           console.log(user2Score);
           $score2.text(user2Score);
-          $(this).css({background: "green"});
+          $(this).css({ background: "green" });
         }
       } else {
         $(this).css({ opacity: 0 });
@@ -153,14 +145,15 @@ $(function() {
         }
       }
 
+      if(clickCounter === $userSquares.length) getWinner();
+
     });
 
-    function getWinner (a, b) {
-      console.log(a, b);
-      if (a > b) {
+    function getWinner() {
+      if (user1Score > user2Score) {
         $result.text("Player 1 Wins");
         console.log("player1");
-      } else if (b > a)  {
+      } else if (user1Score < user2Score)  {
         $result.text("Player 2 Wins");
         console.log("Player2");
       } else {
