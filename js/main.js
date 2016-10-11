@@ -136,7 +136,7 @@ $(function() {                                    //Initialise the variables
       var fileBeingPlayed = audio.src.split('/').slice(-1)[0];
       if(filename === fileBeingPlayed) {                          //Compare sound on right & left grid
         $cpuSquares.eq(currentIndex).stop(true, false);           //If sounds is matched stop fade out
-        if (clickCounter%2 === 0) {
+        if (clickCounter%2 !== 0) {                               //Check if player 1 turn.
 
           $playerTurn.text('Player 1 to Play');
 
