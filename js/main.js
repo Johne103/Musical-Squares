@@ -14,7 +14,7 @@
 //If you click on the wrong image it will be removed from the grid and you will lose your turn.
 
 
-function shuffle(a) {                             //Randomise the image and the sounds for the left grid.
+function shuffle(a) {                                         //Randomise the image and the sounds for the left grid.
   var j, x, i;
   for (i = a.length; i; i--) {
     j = Math.floor(Math.random() * i);
@@ -24,7 +24,7 @@ function shuffle(a) {                             //Randomise the image and the 
   }
 }
 
-$(function() {                                    //Initialise the variables
+$(function() {                                                  //Initialise the variables
   var $cpuSquares = $('#cpuSquares div');
   var $userSquares = $('#userSquares div');
   var audio = $('#soundToPlay')[0];
@@ -45,35 +45,40 @@ $(function() {                                    //Initialise the variables
   var responseTime = 5000;
   var timers;
 
-                                                  //Set the listener for clicking the control buttons.
+                                                                      //Set the listener for clicking
+                                                                      //the control buttons.
   $easyBtn.on("click", setEasy);
   $medBtn.on("click", setMed);
   $hardBtn.on("click", setHard);
   $resetBtn.on("click", resetGame);
-                                                  //Set the response times to 1, 3 or 5 secs before starting the game using the corresponding button.
+
+  $playerTurn.text("LET'S PLAY");                                     //Set the response times to 1, 3 or
+                                                                      //5 secs starting the game using the
+                                                                      //corresponding button.
+
   function setEasy () {
     responseTime = 5000;
-    console.log("responseTime " + responseTime);
     $(this).addClass("active");
     playGame();
   }
 
   function setMed () {
      var responseTime = 3000;
-     console.log("responseTime " + responseTime);
      $(this).addClass("active");
      playGame();
     }
 
   function setHard () {
     responseTime = 1000;
-    console.log("responseTime " + responseTime);
     $(this).addClass("active");
     playGame();
   }
-                                                                //Reinitialise variables and settings
+                                                                          //Reinitialise variables and settings
   function resetGame () {
     console.log('reset pressed');
+
+
+    $playerTurn.text("Click EASY, MEDIUM or HARD to START PLAY");
 
     clickCounter = 0;
     fadeCounter = 0;
@@ -84,11 +89,7 @@ $(function() {                                    //Initialise the variables
     $score1.text(user1Score);
     $score2.text(user2Score);
 
-    whosTurn = "";
-
     $("button").removeClass('active');
-
-    $playerTurn.text(whosTurn);
 
     timers.forEach(function(timerId) {
       clearTimeout(timerId);
@@ -110,7 +111,8 @@ $(function() {                                    //Initialise the variables
     $score1.text(user1Score);                                     //Display initial player scores
     $score2.text(user1Score);
 
-    $playerTurn.text(whosTurn);                                   //Clear text area showing player turn
+
+    $playerTurn.text("Player 1 to Start");                        //Clear text area showing player turn
 
     shuffle($cpuSquares);                                         //Shuffle the left hand grid
 
@@ -121,9 +123,13 @@ $(function() {                                    //Initialise the variables
         audio.src = "sounds/" + $(square).data('filename') + ".wav";
         console.log(audio.src);
         audio.play();
+        fadeCounter++;
+        if(fadeCounter === $cpuSquares.length) getWinner();
+        console.log('fade ' + fadeCounter + $cpuSquares.length);
         $(square).fadeTo(responseTime, 0);                        //Play audio and fade image of selected
       }, i * responseTime);                                       //image.
     });
+
 
     $userSquares.one('click', function() {                        //Limit number of clicks to one on
                                                                   //right hand grid for each player turn.
@@ -138,40 +144,40 @@ $(function() {                                    //Initialise the variables
         $cpuSquares.eq(currentIndex).stop(true, false);           //If sounds is matched stop fade out
         if (clickCounter%2 !== 0) {                               //Check if player 1 turn.
 
-          $playerTurn.text('Player 1 to Play');
 
-          user1Score++;
-          console.log(user1Score);
-          $score1.text(user1Score);
+          user1Score++;                                           //Increment player 1 score.
+          console.log('user1 ' + user1Score);
+          $score1.text(user1Score);                               //and display.
           $(this).css({background: "red"});
+          $playerTurn.toggleClass("green");
+          $playerTurn.text("Player 2 to Play");
         } else {
-          $playerTurn.text('Player 2 to Play');
 
-          user2Score++;
-          console.log(user2Score);
+          //$playerTurn.text('Player 1 to Play');
+
+          user2Score++;                                           //Increment player 2 score.
+          console.log('user2 ' + user2Score);
           $score2.text(user2Score);
           $(this).css({ background: "green" });
+          $playerTurn.text('Player 1 to Play');
         }
       } else {
-        $(this).css({ opacity: 0 });
-        if (clickCounter%2 === 0) {
-          $playerTurn.text('Player 1 to Play');
-        } else {
+        $(this).css({ opacity: 0 });                              //If no hit then hide right grid tile.
+        if (clickCounter%2 === 0) {                               //Check turn if player 1 or player 2.
           $playerTurn.text('Player 2 to Play');
+        } else {
+          $playerTurn.text('Player 1 to Play');
         }
       }
-
-      if(clickCounter === $userSquares.length) getWinner();
-
     });
 
-    function getWinner() {
+    function getWinner() {                                          //Get player scores and diplay winners.
       if (user1Score > user2Score) {
         $result.text("Player 1 Wins");
-        console.log("player1");
+        console.log("player1 win");
       } else if (user1Score < user2Score)  {
         $result.text("Player 2 Wins");
-        console.log("Player2");
+        console.log("Player2 win");
       } else {
         $result.text("It's a Draw");
         console.log("draw");

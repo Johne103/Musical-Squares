@@ -16,11 +16,12 @@ background-color: white;
 border-radius: 20px;
 padding: 30px;
 overflow: hidden;
+opacity: 0.9;
 
 }
 
 h1 {
-  /*font-family: Papyrus, fantasy;*/
+  font-family: Papyrus, fantasy;
   font-size: 60px;
   font-style: normal;
   font-variant: normal;
@@ -44,7 +45,7 @@ h1 {
 
 #playerTurn {
   /*font-family: Papyrus, fantasy;*/
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   text-align: left;
   color: red;
@@ -52,6 +53,7 @@ h1 {
 
 #playerTurn.green {
   color: green;
+  font-size: 15px;
 }
 
 #player1 {
@@ -229,15 +231,13 @@ li {
 #instruct1 {
   color: green;
   font-weight: 600;
+  font-size: 15px;
 }
 
 #instruct2 {
   color: blue;
   font-weight: 600;
-}
-
-#instruct3 {
-  color: red;
+  font-size: 15px;
 }
 
 button.active {
