@@ -16,9 +16,10 @@ competencies: Front-end intro
 
 - Create a game using the tools and techniques learnt in module 1 of the WDI-23.
 - Use of HTML, CSS, Javascript and JQuery.
-- Complete planning activities including wireframe, 
-- Explain the difference between and use cases of static, relative, fixed, & absolute positioning
-- Create a page with multicolumn layout
+- Complete planning activities including wireframe, project planning code development and testing
+- Regularly commit and push wip to GitHub and Heroku.
+- Deploy final solution to Heroku for presentation.
+- Complete 5 minute presentation to GA team.
 
 ### Preparation
 *Before this lesson, students should already be able to:*

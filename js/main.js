@@ -149,7 +149,7 @@ $(function() {                                                        //Initiali
     });
 
 
-    $userSquares.one('click', function() {                        //Limit number of clicks to one on
+    $userSquares.off().on('click', function() {                        //Limit number of clicks to one on
                                                                   //right hand grid for each player turn.
       clickCounter++;                                             //Count the total number of click for
                                                                   //current game session.
