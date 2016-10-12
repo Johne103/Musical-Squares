@@ -24,7 +24,7 @@ competencies: Front-end intro
 ### Preparation
 *Before this lesson, students should already be able to:*
 
-
+Use the information provided in module 1.
 
 WDI-idn-23 integer project 1. created by John Evans release 1.0 12 October 2016.
 
@@ -32,7 +32,7 @@ First project to create a game in order to develop an improved understanding of 
 
 Musical Squares is a 1 or 2 player game that tests the visual and auditory response times of users.
 
-There is potential for application within the medical arena to measure an individuals capacity to responde to visual and auditory stimuation and abliity to concentrate over a short time period.
+There is potential for application within the medical arena to measure an individuals capacity to respond to visual and auditory stimuation and abliity to concentrate over a short time period.
 
 A random grid of images and sounds are presented to the players with the aim of capturing a square that is the process of being removed from the grid.
 
