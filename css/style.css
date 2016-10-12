@@ -45,7 +45,8 @@ h1 {
 
 #playerTurn {
   /*font-family: Papyrus, fantasy;*/
-  font-size: 15px;
+  font-size: 20px;
+  font-weight: 800;
   font-weight: 600;
   text-align: left;
   color: red;
@@ -53,7 +54,8 @@ h1 {
 
 #playerTurn.green {
   color: green;
-  font-size: 15px;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 #player1 {

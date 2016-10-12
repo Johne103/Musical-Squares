@@ -24,7 +24,7 @@ function shuffle(a) {                                         //Randomise the im
   }
 }
 
-$(function() {                                                  //Initialise the variables
+$(function() {                                                        //Initialise the variables
   var $cpuSquares = $('#cpuSquares div');
   var $userSquares = $('#userSquares div');
   var audio = $('#soundToPlay')[0];
@@ -52,31 +52,42 @@ $(function() {                                                  //Initialise the
   $hardBtn.on("click", setHard);
   $resetBtn.on("click", resetGame);
 
-  $playerTurn.text("LET'S PLAY");                                     //Set the response times to 1, 3 or
-                                                                      //5 secs starting the game using the
+  $playerTurn.text("LET'S PLAY");
                                                                       //corresponding button.
+                                                                      //5 secs starting the game using the
+                                                                      //Set the response times to 1, 3 or
 
   function setEasy () {
     responseTime = 5000;
     $(this).addClass("active");
     playGame();
   }
-
   function setMed () {
      var responseTime = 3000;
      $(this).addClass("active");
      playGame();
     }
-
   function setHard () {
     responseTime = 1000;
     $(this).addClass("active");
     playGame();
   }
-                                                                          //Reinitialise variables and settings
+
+      function getWinner() {                                         //Get player scores and diplay winners.
+        if (user1Score > user2Score) {
+          $result.text("Player 1 Wins");
+          console.log("player1 win");
+        } else if (user1Score < user2Score)  {
+          $result.text("Player 2 Wins");
+          console.log("Player2 win");
+        } else {
+          $result.text("It's a Draw");
+          console.log("draw");
+        }
+      }
+                                                                   //Reinitialise variables and settings
   function resetGame () {
     console.log('reset pressed');
-
 
     $playerTurn.text("LET'S PLAY");
 
@@ -96,12 +107,12 @@ $(function() {                                                  //Initialise the
     });
 
     $cpuSquares
-      .stop(true, false)
-      .css({ opacity: 1 });
+      .stop(true, false)                                          //Stop timers on grid.
+      .css({ opacity: 1 });                                       //Restore opacity to show image.
 
     $userSquares
-      .removeAttr("style")
-      .css({ opacity: 1});
+      .removeAttr("style")                                        //Remove background color red or green.
+      .css({ opacity: 1});                                        //Restore opacity to show image.
 
     $result.text("");
   }
@@ -122,12 +133,12 @@ $(function() {                                                  //Initialise the
         currentIndex = i;                                         //manage timings for fading images.
         audio.src = "sounds/" + $(square).data('filename') + ".wav";
         console.log(audio.src);
-        audio.play();
+        audio.play();                                             //Play ramdomly selected square with audio.
         fadeCounter++;
         if(fadeCounter === $cpuSquares.length) getWinner();
         console.log('fade ' + fadeCounter + $cpuSquares.length);
-        $(square).fadeTo(responseTime, 0);                        //Play audio and fade image of selected
-      }, i * responseTime);                                       //image.
+        $(square).fadeTo(responseTime, 0);                        //Fade randomly selected square with image.
+      }, i * responseTime);
     });
 
 
@@ -135,24 +146,21 @@ $(function() {                                                  //Initialise the
                                                                   //right hand grid for each player turn.
       clickCounter++;                                             //Count the total number of click for
                                                                   //current game session.
-      $playerTurn.toggleClass("green");                           //Show player 2 as green -default red.
+
       console.log('clickCounter ' + clickCounter);
-      var parent = $("#userSquares");                             //Identify sound played on right grid,
+      var parent = $("#userSquares");                             //Identify square clicked on right grid,
       var filename = $(this).data('filename') + ".wav";           //and build file name for sound played.
       var fileBeingPlayed = audio.src.split('/').slice(-1)[0];
       if(filename === fileBeingPlayed) {                          //Compare sound on right & left grid
         $cpuSquares.eq(currentIndex).stop(true, false);           //If sounds is matched stop fade out
         if (clickCounter%2 !== 0) {                               //Check if player 1 turn.
-
-
           user1Score++;                                           //Increment player 1 score.
           console.log('user1 ' + user1Score);
           $score1.text(user1Score);                               //and display.
           $(this).css({background: "red"});
-          $playerTurn.toggleClass("green");
+          $playerTurn.toggleClass("green");                       //Show player 2 as green -default red.
           $playerTurn.text("Player 2 to Play");
         } else {
-
           user2Score++;                                           //Increment player 2 score.
           console.log('user2 ' + user2Score);
           $score2.text(user2Score);
@@ -162,27 +170,12 @@ $(function() {                                                  //Initialise the
       } else {
         $(this).css({ opacity: 0 });                              //If no hit then hide right grid tile.
         if (clickCounter%2 === 0) {                               //Check turn if player 1 or player 2.
+          $playerTurn.toggleClass("green");                       //Show player 2 as green -default red.
           $playerTurn.text('Player 2 to Play');
         } else {
           $playerTurn.text('Player 1 to Play');
         }
       }
     });
-
-    function getWinner() {                                          //Get player scores and diplay winners.
-      if (user1Score > user2Score) {
-        $result.text("Player 1 Wins");
-        console.log("player1 win");
-      } else if (user1Score < user2Score)  {
-        $result.text("Player 2 Wins");
-        console.log("Player2 win");
-      } else {
-        $result.text("It's a Draw");
-        console.log("draw");
-      }
-    }
-
   }
-
-//}
 });
