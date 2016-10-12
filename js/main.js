@@ -80,23 +80,23 @@ $(function() {                                                        //Initiali
     playGame();
   }
 
-      function getWinner() {                                         //Get player scores and diplay winners.
-        if (user1Score > user2Score) {
-          $result.text("Player 1 Wins");
-          console.log("player1 win");
-        } else if (user1Score < user2Score)  {
-          $result.text("Player 2 Wins");
-          console.log("Player2 win");
-        } else {
-          $result.text("It's a Draw");
-          console.log("draw");
-        }
+  function getWinner() {                                         //Get player scores and diplay winners.
+    if (user1Score > user2Score) {
+      $result.text("Player 1 Wins");
+        console.log("player1 win");
+      } else if (user1Score < user2Score)  {
+        $result.text("Player 2 Wins");
+        console.log("Player2 win");
+      } else {
+        $result.text("It's a Draw");
+        console.log("draw");
       }
+   }
                                                                    //Reinitialise variables and settings
   function resetGame () {
     console.log('reset pressed');
 
-    $playerTurn.text("LET'S PLAY");
+    $playerTurn.text("LET'S PLAY AGAIN");
 
     clickCounter = 0;
     fadeCounter = 0;
@@ -109,7 +109,7 @@ $(function() {                                                        //Initiali
 
     $("button").removeClass('active');
 
-    timers.forEach(function(timerId) {
+    timers.forEach(function(timerId) {                            //Function to reset left grid array.
       clearTimeout(timerId);
     });
 
