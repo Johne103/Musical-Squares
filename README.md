@@ -10,9 +10,16 @@ competencies: Front-end intro
 
 # End of Module 1 Project.
 
-### Objectives
-*After this lesson, students will be able to:*
+GA WDI-23 Project One John Evans 2016
 
+Play the game here
+
+
+# Musical Squares
+
+Project1_ScreenShot.png
+
+### Objectives
 
 - Create a game using the tools and techniques learnt in module 1 of the WDI-23.
 - Use of HTML, CSS, Javascript and JQuery.
@@ -20,6 +27,7 @@ competencies: Front-end intro
 - Regularly commit and push wip to GitHub and Heroku.
 - Deploy final solution to Heroku for presentation.
 - Complete 5 minute presentation to GA team.
+- Presentation to cover demonstration of game, a review of key aspects of code and feedback on experiences and lesson learnt during planning and delivery as well as potential areas for further development.
 
 ### Preparation
 *Before this lesson, students should already be able to:*
