@@ -12,12 +12,13 @@ competencies: Front-end intro
 
 GA WDI-23 Project One John Evans 2016
 
-Play the game here
-
 
 # Musical Squares
 
-Project1_ScreenShot.png
+Play the game [here](https://lit-hollows-13153.herokuapp.com/)
+
+![Musical Squares](./images/musical_sq_screenShot.png)
+
 
 ### Objectives
 
