@@ -23,13 +23,13 @@ Play the game [here](https://lit-hollows-13153.herokuapp.com/)
 
 ### Objectives
 
-- Create a game using the tools and techniques learnt in module 1 of the WDI-23.
-- Use of HTML, CSS, Javascript and JQuery.
-- Complete planning activities including wireframe, project planning code development and testing
-- Regularly commit and push wip to GitHub and Heroku.
+- Create an interactive game in the browser using the tools and techniques learnt in module 1 of the WDI-23.
+- Use of HTML, CSS, Javascript JQuery and running code from the CLI.
+- Complete planning activities including wireframe, project planning, code development, debugging and testing
+- Manage the effect use of commit and push work in progress solutions to GitHub and Heroku.
 - Deploy final solution to Heroku for presentation.
-- Complete 5 minute presentation to GA team.
-- Presentation to cover demonstration of game, a review of key aspects of code and feedback on experiences and lesson learnt during planning and delivery as well as potential areas for further development.
+- Complete 5 minute presentation to GA team and peers.
+- Presentation to cover demonstration of game, a review of key aspects of code and feedback on experiences and lessons learnt during planning and delivery as well as potential areas for further development.
 
 ### Technology Used
 * Javascript
@@ -38,11 +38,10 @@ Play the game [here](https://lit-hollows-13153.herokuapp.com/)
 * CSS3
 * Heroku
 * git
+* CLI
 
 ### Project Feedback + Evaluation
-This was a challenging experience as a first project with quite a bit of time of the week end being spent on trying to get the various elements of my code including sound and images stored in a randomised array to work. This approach meant the creation of much code with very little output. The lesson learnt to take more time upfront defining the required Must have outcomes and taking the time to complete small increments before moving onto the next component. 
-
-The initial planning activities undertaken on Friday was a useful start but this fell by the wayside as the challenge as the deadline to produce a minimum viable product come closer without a clear understanding of the approach for a solution.
+Focusing on completing a list of Must haves and Should haves at the outset of the project and working to complete small modules of the project as the overall solution evolves was a key learning point to be taken forward. I was able to addapt to the use of JQuery that help me to more effectly realise some of the key functionality delivered in the solution which was proving to be more difficult to realise in JavaScript.
 
 
 ### Preparation
@@ -54,7 +53,7 @@ First project to create a game in order to develop an improved understanding of 
 
 Musical Squares is a 1 or 2 player game that tests the visual and auditory response times of users.
 
-![MusicalSquares](./images/musical_sq_screenShot2.png)
+![MusicalSquares](./images/musical_sq_sreenShot2.png)
 
 
 There is potential for application within the medical arena to measure an individuals capacity to respond to visual and auditory stimuation and abliity to concentrate over a short time period.
@@ -73,29 +72,31 @@ If you click on the wrong image it will be removed from the grid and you will lo
 
 
 
-
 ###The Steps taken
 
-Initial planning using Trello, timeline, wireframes, developing gameplay rules, technology to use, code tests, functionality tests and uploading.
+Initial planning using Trello, timeline, wireframes, developing game concept and gameplay rules, technology to use, code tests, functionality tests and uploading.
 
 
 ###Challenges faced
 
 - Translating the concept into a workable solution, using the knowledge gained during the 2 weeks on the course.
-- Understanding enough jQuery and Javascript to get the job done.
-- Getting css and html to show how I wanted. 
+- Understanding enough jQuery and Javascript to get the job done within the required deadline.
+- Getting css and html to display the game with styling and features as intended. 
 
 ###Where to from here?
 The game could be improved in the following ways:
 
-* Convert the Javascript and JQuery code over to ES6 code.
+* Convert the Javascript and JQuery code over to ES6 code and an Object Oriented solution.
+* Improve styling to make the game more eye catching.
 * Adding a timer for reaction for each player and overall timer for the game play.
 * Adding on more challenges and levels.
-* Add options for 3x3 and 5x5 game boards
+* Add options for 3x3 and 5x5 game boards.
+* Investigate indroducing responsiveness to allow game to be played on smaller screen formats.
 
 
 
 ###Bugs/Issues
 - Computer may at times freeze part way through the game.
+- Investigate size of image files and reduce to improve responsiveness 
 
 
