@@ -4,7 +4,7 @@
 
 body {
   max-width: 960px;
-  background-image: url(../images/musical_notes.jpg);
+  background-image: url(../images/audio_waveform.jpg);
   margin: 0 auto;
   background-size: cover;
   background-position: center;
@@ -12,23 +12,31 @@ body {
 }
 
 main {
-background-color: white;
+background-color: black;
 border-radius: 20px;
 padding: 30px;
 overflow: hidden;
-opacity: 0.9;
+opacity: 0.8;
 
 }
 
 h1 {
   font-family: Papyrus, fantasy;
+  color: white;
   font-size: 60px;
   font-style: normal;
   font-variant: normal;
   font-weight: 800;
-  line-height: 26.4px;
+  line-height: 24px;
   text-align: center;
-  margin: 50px 0;
+  margin: 20px 0;
+}
+
+@media (max-width: 920px) {
+
+  h1 {
+    line-height: 60px;
+  }
 }
 
 .scores {
@@ -126,6 +134,7 @@ h1 {
 
 #userSquares div {
   display: inline-block;
+  border: 2px solid #222;
   width: 50px;
   height: 50px;
   background-position: center;
@@ -149,6 +158,23 @@ h1 {
 #userSquares div:nth-child(14) { background-image: url(../images/music_keys.jpg); }
 #userSquares div:nth-child(15) { background-image: url(../images/music_player_buttons.jpg); }
 #userSquares div:nth-child(16) { background-image: url(../images/music_roll.jpg); }
+
+#userSquares div:nth-child(1):hover { border-color: yellow; }
+#userSquares div:nth-child(2):hover { border-color: yellow; }
+#userSquares div:nth-child(3):hover { border-color: yellow; }
+#userSquares div:nth-child(4):hover { border-color: yellow; }
+#userSquares div:nth-child(5):hover { border-color: yellow; }
+#userSquares div:nth-child(6):hover { border-color: yellow; }
+#userSquares div:nth-child(7):hover { border-color: yellow; }
+#userSquares div:nth-child(8):hover { border-color: yellow; }
+#userSquares div:nth-child(9):hover { border-color: yellow; }
+#userSquares div:nth-child(10):hover { border-color: yellow; }
+#userSquares div:nth-child(11):hover { border-color: yellow; }
+#userSquares div:nth-child(12):hover { border-color: yellow; }
+#userSquares div:nth-child(13):hover { border-color: yellow; }
+#userSquares div:nth-child(14):hover { border-color: yellow; }
+#userSquares div:nth-child(15):hover { border-color: yellow; }
+#userSquares div:nth-child(16):hover { border-color: yellow; }
 
 
 
@@ -187,7 +213,7 @@ li {
 
 #gameButtons {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 #easy {
@@ -234,12 +260,14 @@ li {
   color: green;
   font-weight: 600;
   font-size: 15px;
+  margin-top: 0px;
 }
 
 #instruct2 {
   color: blue;
   font-weight: 600;
   font-size: 15px;
+  margin: 0px;
 }
 
 button.active {

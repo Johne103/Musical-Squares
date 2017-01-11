@@ -1,9 +1,6 @@
 $(function() {
 
-  //document.addEventListener('DOMContentLoaded', function () {
-
-
-
+  var audioSrc = '';
   var cpuSquares = [
     {
       audioSrc: 'sounds/after.wav',
@@ -108,140 +105,127 @@ $(function() {
   var userSquares = [
     {
       audioSrc: 'sounds/after.wav',
-      audioId: 'userSquareAudio0',
+      audioId: 'userSquareAudio0'
     },
     {
       audioSrc: 'sounds/better.wav',
-      audioId: 'userSquareAudio1',
+      audioId: 'userSquareAudio1'
     },
     {
       audioSrc: 'sounds/do_it.wav',
-      audioId: 'userSquareAudio2',
+      audioId: 'userSquareAudio2'
     },
     {
       audioSrc: 'sounds/ever.wav',
-      audioId: 'userSquareAudio3',
+      audioId: 'userSquareAudio3'
     },
     {
       audioSrc: 'sounds/faster.wav',
-      audioId: 'userSquareAudio4',
+      audioId: 'userSquareAudio4'
     },
     {
       audioSrc: 'sounds/harder.wav',
-      audioId: 'userSquareAudio5',
+      audioId: 'userSquareAudio5'
     },
     {
       audioSrc: 'sounds/hour.wav',
-      audioId: 'userSquareAudio6',
+      audioId: 'userSquareAudio6'
     },
     {
       audioSrc: 'sounds/make_it.wav',
-      audioId: 'userSquareAudio7',
+      audioId: 'userSquareAudio7'
     },
     {
       audioSrc: 'sounds/makes_us.wav',
-      audioId: 'userSquareAudio8',
+      audioId: 'userSquareAudio8'
     },
     {
       audioSrc: 'sounds/do_it.wav',
-      audioId: 'userSquareAudio9',
+      audioId: 'userSquareAudio9'
     },
     {
       audioSrc: 'sounds/ever.wav',
-      audioId: 'userSquareAudio10',
+      audioId: 'userSquareAudio10'
     },
     {
       audioSrc: 'sounds/faster.wav',
-      audioId: 'userSquareAudio11',
+      audioId: 'userSquareAudio11'
     },
     {
       audioSrc: 'sounds/harder.wav',
-      audioId: 'userSquareAudio12',
+      audioId: 'userSquareAudio12'
     },
     {
       audioSrc: 'sounds/hour.wav',
-      audioId: 'userSquareAudio13',
+      audioId: 'userSquareAudio13'
     },
     {
       audioSrc: 'sounds/make_it.wav',
-      audioId: 'userSquareAudio14',
+      audioId: 'userSquareAudio14'
     },
     {
       audioSrc: 'sounds/makes_us.wav',
-      audioId: 'userSquareAudio15',
+      audioId: 'userSquareAudio15'
     }
   ];
 
   console.log(userSquares);
 
-  var playBtn = document.getElementById("play");
-  var selectLevel1 = document.getElementById("level1");
-  var selectLevel2 = document.getElementById("level2");
-  var selectLevel3 = document.getElementById("level3");
-  var resetBtn = document.getElementById("reset");
-  var quitBtn = document.getElementById("quit");
-  var playSound = document.getElementById("soundToPlay");
+  var playBtn = document.getElementById('play');
+  var selectLevel1 = document.getElementById('level1');
+  var selectLevel2 = document.getElementById('level2');
+  var selectLevel3 = document.getElementById('level3');
+  var resetBtn = document.getElementById('reset');
+  var quitBtn = document.getElementById('quit');
+  // var playSound = document.getElementById('soundToPlay');
 
-  var userLevel = "";
+  var userLevel = '';
 
-  var clickCounter = 0;
+  // var clickCounter = 0;
 
-
-
-
-
-  // document.addEventListener("click", setLevel());
-  //
-  // function setLevel(n) {
-  //   var setLevel = this.id;
-  // }
-
-  playBtn.addEventListener("click", playGame);
-  selectLevel1.addEventListener("click", setUserLevel);
-  selectLevel2.addEventListener("click", setUserLevel);
-  selectLevel3.addEventListener("click", setUserLevel);
-  resetBtn.addEventListener("click", resetGame);
-  quitBtn.addEventListener("click", quitGame);
+  playBtn.addEventListener('click', playGame);
+  selectLevel1.addEventListener('click', setUserLevel);
+  selectLevel2.addEventListener('click', setUserLevel);
+  selectLevel3.addEventListener('click', setUserLevel);
+  resetBtn.addEventListener('click', resetGame);
+  quitBtn.addEventListener('click', quitGame);
 
   document.addEventListener('DOMContentLoaded', function() {
-    var playSound = document.getElementById("soundToPlay");
+    var playSound = document.getElementById('soundToPlay');
 
     for (var i = 0; i < userSquares.length; i++) {
       userSquares[i].addEventListener('click', function() {
         console.log('switch ' + this.id);
         switch (this.id) {
-        case 'userSquareAudio0':
-          playSound.src = audioSrc;
-          break;
-        case 'userSquareAudio1':
-          playSound.src = audioSrc;
-          break;
-        case 'userSquareAudio2':
-          playSound.src = audioSrc;
-          break;
+          case 'userSquareAudio0':
+            playSound.src = audioSrc;
+            break;
+          case 'userSquareAudio1':
+            playSound.src = audioSrc;
+            break;
+          case 'userSquareAudio2':
+            playSound.src = audioSrc;
+            break;
         }
-
         playSound.play();
       });
     }
   });
 
-  //$('div').one('click', function() {
-
-  $(function(){
-    $('.cpu-square').on("click", function() {
+  $(function() {
+    $('.cpu-square').on('click', function() {
       var $element = $(this);
-      $element.hide("slow", "swing", function(){
+      $element.hide('slow', 'swing', function(){
         setTimeout(function(){
           $element.show();
         }, 1000);
       });
     });
   });
-});
+// });
   function playGame () {
     var playStart = this.id;
-    console.log("play " + playStart);
+    console.log('play ' + playStart);
 
     initialiseCpuSquares();
 
@@ -251,44 +235,39 @@ $(function() {
 
     for (var i = 0; i<noOfCpuSquares; i++) {
       var $element = cpuSquares[i];
-      $element.hide("slow", function() {
+      $element.hide('slow', function() {
         setTimeout(function(){
-           $element.show();
-           }, 1000);
-         });
+          $element.show();
+        }, 1000);
+      });
     }
   }
 
   function setUserLevel() {
     var userLevel = this.id;
-    console.log("user " + userLevel);
+    console.log('user ' + userLevel);
   }
 
   function resetGame () {
-    clickCounter = 0;
+    // clickCounter = 0;
     for(var i=0;i<userSquares.length; i++) {
-      userSquares[i].textContent = "";
+      userSquares[i].textContent = '';
     }
   }
+
   function quitGame () {
     var playQuit = this.id;
   }
 
   function getLevel(a) {
-    if (a == "level1") {
-         return 12;
-    }
-    else if (a == "level2") {
-          return 7;
-    }
-    else {
-         return 0;
+    if (a === 'level1') {
+      return 12;
+    } else if (a === 'level2') {
+      return 7;
+    } else {
+      return 0;
     }
   }
-
-  // var gameLevel = getLevel(userLevel);
-  // console.log("level " + gameLevel);
-
 
   function initialiseCpuSquares() {
     var noOfCpuSquares = (cpuSquares.length - 7);
@@ -319,9 +298,10 @@ $(function() {
     var noOfUserSquares = (userSquares.length -7);
     var userSquaresContainerObj = document.getElementById('userSquares');
 
-    var userSquareObj;
-    var userAudioObj;
-    var userButtons = document.querySelectorAll("#userSquares");
+    var audioObj ='';
+    var userSquareObj ='';
+    // var userAudioObj ='';
+    // var userButtons = document.querySelectorAll('#userSquares');
 
     for (var i = 0; i<noOfUserSquares; i++) {
       userSquareObj = document.createElement('div');
@@ -338,30 +318,7 @@ $(function() {
     }
   }
 
-  // function initaliseEventListeners() {
-  //   for (var i = 0; i < userSquares.length; i++) {
-  //     userSquares[i].addEventListener("click", playSound);
-  //   }
-  // }
-
-
-
-
-
   var gameLevel = getLevel(userLevel);
-  console.log("level " + gameLevel);
+  console.log('level ' + gameLevel);
 
-
-
-
-  // initialiseCpuSquares();
-  //
-  // initialiseUserSquares();
-
-  //initaliseEventListeners();
-
-
-
-
-//});
 });

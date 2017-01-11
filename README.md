@@ -21,6 +21,9 @@ Play the game [here](https://lit-hollows-13153.herokuapp.com/)
 ![Musical Squares](./images/musical_sq_screenShot.png)
 
 
+
+
+
 ### Objectives
 
 - Create an interactive game in the browser using the tools and techniques learnt in module 1 of the WDI-23.
