@@ -21,7 +21,7 @@
 //On reset the computer may record and additional click when only one click was intended. Issue resolved with use of listener off function $userSquares.off().on('click', function() {
 
 
-function shuffle(a) {                                         //Randomise the image and the sounds for the left grid.
+function shuffle(a) {                                         //Randomise the image and the sounds for the cpu grid.
   var j, x, i;
   for (i = a.length; i; i--) {
     j = Math.floor(Math.random() * i);
@@ -44,7 +44,7 @@ $(function() {                                                        //Initiali
   let user2Score = 0;
   let clickCounter = 0;
   let fadeCounter = 0;
-  const whosTurn = '';
+  // const whosTurn = '';
   const $easyBtn = $('#easy');
   const $medBtn = $('#medium');
   const $hardBtn = $('#hard');
